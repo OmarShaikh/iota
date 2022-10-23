@@ -12,9 +12,8 @@ const SensorCard = (props) => {
     <div key={props.data.name}>
       <Card
         actions={[
-          <SettingOutlined key='setting' />,
           <EditOutlined key='edit' />,
-          <EllipsisOutlined key='ellipsis' />,
+          <SettingOutlined key='setting' />,
         ]}
       >
         <CardBody

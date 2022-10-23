@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import SensorCard from '../../Components/SensorCard/SensorCard';
 import Logo from '../../Assets/Images/logo.png';
-import { UserOutlined } from '@ant-design/icons';
+import { useThemeSwitcher } from 'react-css-theme-switcher';
 import {
-  Avatar,
   Divider,
   Image,
   Row,
@@ -12,13 +11,28 @@ import {
   Segmented,
   Card,
   Typography,
+  Switch,
+  Input,
 } from 'antd';
+import { BulbOutlined } from '@ant-design/icons';
 
 const { Header, Footer, Content } = Layout;
 const { Title, Text } = Typography;
 
 export const Dashboard = ({ sensorValue, updateConnection }) => {
   const [showConnected, setShowConnected] = useState(false);
+
+  const [isDarkMode, setIsDarkMode] = React.useState();
+  const { switcher, status, themes } = useThemeSwitcher();
+
+  const toggleTheme = (isChecked) => {
+    setIsDarkMode(isChecked);
+    switcher({ theme: isChecked ? themes.dark : themes.light });
+  };
+
+  if (status === 'loading') {
+    return null;
+  }
 
   const handleToggle = () => {
     setShowConnected((preVal) => !preVal);
@@ -33,7 +47,13 @@ export const Dashboard = ({ sensorValue, updateConnection }) => {
               <Image preview={false} width={120} src={Logo} />
             </Col>
             <Col>
-              <Avatar icon={<UserOutlined />} />
+              <Switch
+                block
+                checked={isDarkMode}
+                onChange={toggleTheme}
+                checkedChildren={'☀️'}
+                unCheckedChildren={'🌙'}
+              />
             </Col>
           </Row>
         </Header>
