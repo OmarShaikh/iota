@@ -12,9 +12,7 @@ import {
   Card,
   Typography,
   Switch,
-  Input,
 } from 'antd';
-import { BulbOutlined } from '@ant-design/icons';
 
 const { Header, Footer, Content } = Layout;
 const { Title, Text } = Typography;

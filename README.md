@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# IOTA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+IOT Sensor management system with real time data.
 
-## Available Scripts
+## Instructions to run
 
-In the project directory, you can run:
+1. edit webpack.config.js file by adding below code snippet to oneOf: [ ]
 
-### `npm start`
+### // Adds support for LESS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+            {
+              test: /\.less$/,
+              use: [
+                  { loader: 'style-loader' },
+                  { loader: 'css-loader' },
+                  { loader: 'less-loader' }
+              ]
+          },
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. run the server
+3. cd into iota folder
+4. run npm install
+5. run npx gulp less
+6. run npm start
+7. open http://localhost:3000 to view it in your browser.
 
-### `npm test`
+## What optimisation technique can be used for performance optimisation?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Using Redux for state management, so data does not have to be passed through components, hence reducing re-rendering
 
-### `npm run build`
+- Creating memoized selectors with Reselect to reduce re-rendering
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Throttling and Debouncing event actions to reduce re-rendering
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Dependency optimisation to reduce project size
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Using Web Workers for CPU extensive tasks
 
-### `npm run eject`
+## What aspect of this exercise did you find most interesting?
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+I really enjoyed the assignment in its entirety. It allowed me to exercise both my creative and logical side.
+However, i was particularly fascinated by the amount of real time data being transmitted from the server. I could imagine endless possibilities of exercising my creative side to visualise this data in meaningfull ways and my logical side to ensure that the application is snappy despite the vast amount of incoming data.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## What did you find most cumbersome?
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+I found the process of incorporating the data into my application rather tedious, Mainly because i did not implement a store for central state management, but there's nothing like the feeling of having something come together and just work! It was very fulfilling.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Questions?
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please feel free to reach out to me if you have any questions or suggestions.
