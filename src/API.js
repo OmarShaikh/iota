@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { NotFound } from './Pages/NotFound';
 
 export default function API({ children }) {
   const [val, setVal] = useState(null);
@@ -41,12 +42,14 @@ export default function API({ children }) {
 
   return (
     <div>
-      {val
-        ? React.cloneElement(children, {
-            sensorValue: val,
-            updateConnection: fnRef.current,
-          })
-        : null}
+      {val ? (
+        React.cloneElement(children, {
+          sensorValue: val,
+          updateConnection: fnRef.current,
+        })
+      ) : (
+        <NotFound />
+      )}
     </div>
   );
 }

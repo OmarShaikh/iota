@@ -46,7 +46,6 @@ export const Dashboard = ({ sensorValue, updateConnection }) => {
             </Col>
             <Col>
               <Switch
-                block
                 checked={isDarkMode}
                 onChange={toggleTheme}
                 checkedChildren={'☀️'}
