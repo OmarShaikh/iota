@@ -4,7 +4,8 @@ IOT Sensor management system with real time data.
 
 ## Instructions to run
 
-1. edit webpack.config.js file by adding below code snippet to oneOf: [ ]
+1. Run npm install in root folder
+2. edit webpack.config.js file by adding below code snippet to oneOf: [ ]
 
 ### // Adds support for LESS
 
@@ -17,12 +18,12 @@ IOT Sensor management system with real time data.
               ]
           },
 
-2. run the server
-3. cd into iota folder
-4. run npm install
-5. run npx gulp less
-6. run npm start
-7. open http://localhost:3000 to view it in your browser.
+3. run the server
+4. cd into iota folder
+5. run npm install
+6. run npx gulp less
+7. run npm start
+8. open http://localhost:3000 to view it in your browser.
 
 ## What optimisation technique can be used for performance optimisation?
 
